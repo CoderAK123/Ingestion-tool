@@ -29,8 +29,8 @@ This project is a web-based tool that enables bidirectional data ingestion betwe
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/zeotap-ingestion-tool.git
-cd zeotap-ingestion-tool
+git clone https://github.com/your-username/Ingestion-too.git
+cd Ingestion-tool
 
 2. Setup ClickHouse via Docker
 bash
@@ -39,7 +39,7 @@ docker run -d --name clickhouse-server --ulimit nofile=262144:262144 -p 8123:812
 Load example datasets (uk_price_paid, ontime) into ClickHouse manually or using the provided scripts if any.
 
 3. Run the Spring Boot backend
-cd zeotp-ingestion-tool 
+cd Ingestion-tool 
 mvn  spring-boot:run -DskipTests
 4. Open the Frontend
 Open zeotap-frontend/index.html in your web browser directly.
