@@ -1,4 +1,4 @@
-# Zeotap Assignment – Bidirectional ClickHouse & Flat File Ingestion Tool
+# Bidirectional ClickHouse & Flat File Ingestion Tool
 
 This project is a web-based tool that enables bidirectional data ingestion between a **ClickHouse database** and **CSV flat files**. It supports JWT-based authentication for ClickHouse, lets users choose specific columns for ingestion, and displays the total number of records processed after each operation.
 
