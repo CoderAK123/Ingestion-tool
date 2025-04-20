@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zeotap Ingestion Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Zeotap Ingestion Tool</h1>
+
+    <!-- Configuration Form Section -->
+    <section>
+        <h3>ClickHouse Configuration</h3>
+        <form id="configForm">
+            <label>Host: <input type="text" id="host" value="localhost"></label><br>
+            <label>Port: <input type="number" id="port" value="8123"></label><br>
+            <label>Database: <input type="text" id="database" value="zeotap"></label><br>
+            <label>Username: <input type="text" id="username" value="default"></label><br>
+            <label>Password: <input type="password" id="password" value=""></label><br>
+            <label>Use HTTPS: <input type="checkbox" id="useHttps"></label><br>
+            <button type="button" class="button" onclick="testConnection()">Test Connection</button>
+            <button type="button" class="button" onclick="getTables()">Get Tables</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Table Selection Section -->
+    <section>
+        <h3>Select Table</h3>
+        <label for="tableName">Table Name: </label><input type="text" id="tableName" placeholder="Enter table name" />
+        <button class="button" onclick="getColumns()">Get Columns</button>
+    </section>
+
+    <!-- Available Columns Section -->
+    <section>
+        <h3>Available Columns</h3>
+        <div id="columnsList"></div>
+        <label for="selectedColumns">Select Columns to Download:</label><br>
+        <select id="selectedColumns" multiple size="6" style="min-width: 200px;"></select>
+    </section>
+
+    <hr>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" style="display: none;">Loading...</div>
+
+    <!-- CSV Upload Section -->
+    <section>
+        <h3>Upload CSV to ClickHouse</h3>
+        <input type="file" id="csvFile">
+        <input type="text" id="delimiter" placeholder="Delimiter (e.g., ,)" value="," />
+        <button class="button" onclick="uploadCSV()">Upload</button>
+    </section>
+
+    <hr>
+
+    <!-- JOIN Query Section -->
+    <section>
+        <h3>Optional JOIN Query</h3>
+        <textarea id="joinQuery" placeholder="Optional JOIN query" rows="4" cols="60"></textarea><br>
+        <button class="button" onclick="previewCSV()">Preview</button>
+        <div id="previewOutput"></div>
+    </section>
+
+    <!-- Column Selection Modal -->
+<div id="columnsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Select Columns</h2>
+        <div id="columnsList"></div>
+        <button onclick="previewCSV()">Preview</button>
+    </div>
+</div>
+
+    <hr>
+
+    <!-- CSV Download Section -->
+    <section>
+        <h3>Download Table as CSV</h3>
+        <button class="button" onclick="downloadCSV()">Download CSV</button>
+    </section>
+
+    <!-- Output Section -->
+    <div id="output"></div>
+
+    <!-- Loading Text -->
+    <div id="loading" style="display: none; font-weight: bold; color: blue; margin-top: 10px;">Loading...</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

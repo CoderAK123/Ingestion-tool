@@ -1,0 +1,13 @@
+# prompts.txt
+
+1. "Help me set up a Spring Boot backend for uploading and downloading CSV files to ClickHouse."
+2. "Generate a Spring Boot REST controller with endpoints for file upload and download."
+3. "Give me ClickHouse Docker commands and configuration for local testing."
+4. "How to write a service to parse multipart CSV and insert into ClickHouse using JDBC?"
+5. "Provide HTML and JavaScript to call backend API for file upload and download."
+6. "Add JWT authentication to my Spring Boot endpoints with simple hardcoded tokens."
+7. "How can I filter columns and limit rows in a ClickHouse SQL query?"
+8. "Create a professional README file for this project, similar to Data Prep style."
+9. "Generate loading indicators and better UI UX using vanilla JavaScript."
+10. "Give me a clean, professional-looking `prompts.txt` file as per Zeotap submission format."
+
